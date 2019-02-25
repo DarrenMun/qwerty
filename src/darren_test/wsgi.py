@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 application = Flask(__name__)
 application.config['SECRET_KEY'] = 'secret'
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(application)
 
 class Student(db.Model):
