@@ -1,5 +1,6 @@
 from flask import Flask, request, Response, json ,jsonify,abort
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 application = Flask(__name__)
 application.config['SECRET_KEY'] = 'secret'
@@ -94,7 +95,7 @@ def update_results(indexId):
 	return jsonify({'students':'Pass'})
 
 if __name__ == '__main__':
-	application.run()
+	application.run(debug= True)
 
 #curl -i -H "Content-Type: application/json" -X POST -d '{\"name\":\"Sivu\",\"physics\":30,\"maths\":90,\"chemistry\":10}' http://127.0.0.1:5000/results
 #curl -i -H "Content-Type: application/json" -X POST -d "{\"name\":\"Sivu\"}" http://127.0.0.1:5000/results
