@@ -27,3 +27,4 @@ pip == 9.0.3
 setuptools == 40.8.0
 Werkzeug
 wheel
+pytest

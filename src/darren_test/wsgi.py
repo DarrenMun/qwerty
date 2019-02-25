@@ -17,10 +17,6 @@ class Student(db.Model):
 	def __repr__(self):
 		return f"Student('{self.name}','{self.physics}','{self.maths}','{self.chemistry}')"
 
-class JsonResponse(Response):
-	def __init__(self, json_dict, status=200):
-		super().__init__(response=json.dumps(json_dict), status=status, mimetype="application/json")
-
 @application.route('/', methods=['GET'])
 def student():
 	data = Student.query.all()
