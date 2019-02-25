@@ -22,6 +22,7 @@ Flask-Testing
 itsdangerous 
 Jinja2 
 MarkupSafe
+flask_sqlalchemy
 pip == 9.0.3
 setuptools == 40.8.0
 Werkzeug
