@@ -95,7 +95,7 @@ def update_results(indexId):
 	return jsonify({'students':'Pass'})
 
 if __name__ == '__main__':
-	application.run(debug= True)
+	application.run(debug= True,host='0.0.0.0')
 
 #curl -i -H "Content-Type: application/json" -X POST -d '{\"name\":\"Sivu\",\"physics\":30,\"maths\":90,\"chemistry\":10}' http://127.0.0.1:5000/results
 #curl -i -H "Content-Type: application/json" -X POST -d "{\"name\":\"Sivu\"}" http://127.0.0.1:5000/results
