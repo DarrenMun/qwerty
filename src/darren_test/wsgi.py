@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 application = Flask(__name__)
 application.config['SECRET_KEY'] = 'secret'
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(application)
 
 class Student(db.Model):
@@ -94,9 +95,7 @@ def update_results(indexId):
 	return jsonify({'students':'Pass'})
 
 if __name__ == '__main__':
-	script_name = __file__
-	print("run:\n""FLASK_APP={} python -m flask run --port 8000 --host 0.0.0.0".format(script_name))
-	exit(1)
+	application.run()
 
 #curl -i -H "Content-Type: application/json" -X POST -d '{\"name\":\"Sivu\",\"physics\":30,\"maths\":90,\"chemistry\":10}' http://127.0.0.1:5000/results
 #curl -i -H "Content-Type: application/json" -X POST -d "{\"name\":\"Sivu\"}" http://127.0.0.1:5000/results
